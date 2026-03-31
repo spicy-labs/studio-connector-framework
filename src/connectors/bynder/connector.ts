@@ -83,7 +83,7 @@ class BynderConnector implements Media.MediaConnector {
         context.collection = ""; // Ensure context is updated with collection filter for downstream use
     }
 
-    if (context["collectionView"] && collectionFilter == "") {
+    if (context["collectionView"] && collectionFilter === "") {
         const res = await this.request(`https://${this.runtime.options["baseURL"]}/api/v4/collections/`, context);
         const collections = JSON.parse(res.text);
         const dataFormatted= collections.map((c: any)=> ({
