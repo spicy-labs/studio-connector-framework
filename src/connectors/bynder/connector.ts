@@ -54,7 +54,7 @@ class BynderConnector implements Media.MediaConnector {
     if (options.filter[0] !== "") {
       filter = options.filter[0];
     }
-    if(options.pageSize==1 && !options.collection) {
+    if(options.pageSize === 1 && !options.collection) {
       const assetId = options.filter[0]
       const asset = await this.detail(assetId, context)
       return {
