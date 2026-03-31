@@ -65,7 +65,7 @@ class BynderConnector implements Media.MediaConnector {
         },
       }
     }
-    let collectionFilter= "";
+    let collectionFilter = "";
     if (context.collectionView) {
         context.collection = "";// Ignore collection filter when in collection view mode
     }
