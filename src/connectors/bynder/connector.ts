@@ -23,7 +23,7 @@ class BynderConnector implements Media.MediaConnector {
 
         if (!response.ok) {
             const err = await response.text;
-            throw new Error(`Bynder API Error: ${response.status} - ${err}`);
+            throw new ConnectorHttpError(response.status, `Bynder API Error: ${response.status} - ${err}`);
         }
 
         return response;
