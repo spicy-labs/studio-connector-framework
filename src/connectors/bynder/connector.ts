@@ -70,7 +70,7 @@ class BynderConnector implements Media.MediaConnector {
         context.collection = "";// Ignore collection filter when in collection view mode
     }
 
-    if (options.collection == "/") {
+    if (options.collection === "/") {
         if (context.collection == null || context.collection === "") {
             collectionFilter = ""; // No filter, fetch all media
         }
