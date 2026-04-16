@@ -89,8 +89,8 @@ class BynderConnector implements Media.MediaConnector {
         const dataFormatted= collections.map((c: any)=> ({
             id: c.id,
             name: c.name,
-            relativePath: '/',
-            extention: '',
+            relativePath: "/",
+            extension: "",
             type: 1, // type 1 for collection, 0 for asset
           }));
 
@@ -126,7 +126,12 @@ class BynderConnector implements Media.MediaConnector {
       relativePath: '/',
       extention: d.extension[0],
       type: 0, // type 1 for collection, 0 for asset
-      metaData: {width: d.width.toString(), height: d.height.toString(), name: d.name.toString(), brandId: d.brandId.toString()},
+      metaData: {
+          width: d.width?.toString() ?? "",
+          height: d.height?.toString() ?? "",
+          name: d.name?.toString() ?? "",
+          brandId: d.brandId?.toString() ?? ""
+        },
     }));
 
     return {
